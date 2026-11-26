@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>بنك أسئلة اللغة الإنكليزية البحرية - الأكاديمية السورية للتدريب والتأهيل البحري</title>
+    
+    <!-- Google Fonts: Cairo for Arabic & Inter for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        english: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#060f1d',
+                            900: '#0a192f',
+                            800: '#112240',
+                            700: '#1d3557',
+                        },
+                        ocean: {
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f1f5f9;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .font-en {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+        /* Smooth view transitions */
+        .fade-in {
+            animation: fadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Subtle maritime pattern for hero header */
+        .maritime-bg {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 60%, #0f294a 100%);
+        }
+        /* Custom iOS-style toggle transition */
+        .toggle-dot {
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased selection:bg-ocean-500 selection:text-white">
+
+    <!-- ==================== SCREEN 1: MAIN HOME SCREEN ==================== -->
+    <div id="home-screen" class="min-h-screen flex flex-col fade-in">
+        <!-- Hero Header -->
+        <header class="maritime-bg text-white pt-8 pb-16 px-4 sm:px-6 rounded-b-[2rem] shadow-xl relative overflow-hidden">
+            <!-- Decorative subtle circles -->
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-ocean-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto relative z-10 text-center">
+                <!-- Ship Helm SVG Icon -->
+                <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-lg mb-4">
+                    <svg class="w-10 h-10 sm:w-12 sm:h-12 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <circle cx="12" cy="12" r="8"></circle>
+                        <line x1="12" y1="2" x2="12" y2="4"></line>
+                        <line x1="12" y1="20" x2="12" y2="22"></line>
+                        <line x1="2" y1="12" x2="4" y2="12"></line>
+                        <line x1="20" y1="12" x2="22" y2="12"></line>
+                        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+                        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+                        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+                        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+                    </svg>
+                </div>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+                    بنك أسئلة اللغة الإنكليزية البحرية
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base font-medium max-w-xl mx-auto">
+                    الأكاديمية السورية للتدريب والتأهيل البحري - ملاحة فصل رابع
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Container -->
+        <main class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 -mt-8 pb-12 relative z-20">
+            
+            <!-- Comprehensive Exam Featured Card -->
+            <div onclick="startQuiz('all')" role="button" tabindex="0" class="group cursor-pointer bg-white rounded-3xl p-6 sm:p-7 shadow-lg hover:shadow-2xl border border-slate-200/80 transition-all duration-300 hover:-translate-y-1 mb-6 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-ocean-500 to-navy-900"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-navy-900 to-ocean-600 text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <h2 class="text-xl sm:text-2xl font-extrabold text-navy-900">الاختبار الشامل</h2>
+                                <span class="px-3 py-0.5 text-xs font-bold rounded-full bg-gold-500/15 text-amber-700 border border-gold-500/30">
+                                    72 سؤال
+                                </span>
+                            </div>
+                            <p class="text-slate-500 text-sm sm:text-base">
+                                يشمل جميع أسئلة الأبجدية البحرية والنماذج (A, B, C) والتحويل ومحددات الرسائل.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="sm:shrink-0">
+                        <span class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-navy-900 text-white font-bold text-sm sm:text-base group-hover:bg-ocean-600 transition-colors shadow-md">
+                            <span>ابدأ الاختبار</span>
+                            <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shuffle Toggle Bar -->
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl px-5 py-3.5 shadow-sm border border-slate-200/80 mb-6 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-ocean-500/10 text-ocean-600 flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm sm:text-base text-slate-800">ترتيب عشوائي للأسئلة</p>
+                        <p class="text-xs text-slate-500">تفعيل خلط الأسئلة عند بدء أي اختبار</p>
+                    </div>
+                </div>
+                <button id="shuffle-toggle-btn" type="button" onclick="toggleShuffle()" role="switch" aria-checked="false" class="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-300 transition-colors duration-200 focus:outline-none">
+                    <span id="shuffle-toggle-dot" class="toggle-dot pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 translate-x-0"></span>
+                </button>
+            </div>
+
+            <!-- Section Title for Branches -->
+            <div class="flex items-center justify-between mb-4 px-1">
+                <h3 class="text-lg font-extrabold text-navy-900 flex items-center gap-2">
+                    <span class="w-2 h-6 rounded-full bg-ocean-500 inline-block"></span>
+                    أفرع المادة الدراسية
+                </h3>
+                <span class="text-xs font-semibold text-slate-500">4 أقسام مستقلة</span>
+            </div>
+
+            <!-- 4 Branch Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <!-- Branch 1: Alphabet -->
+                <div onclick="startQuiz('part1')" role="button" tabindex="0" class="group cursor-pointer bg-white rounded-2xl p-5 shadow-sm hover:shadow-xl border border-slate-200/80 transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="flex items-start justify-between gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-ocean-600 flex items-center justify-center group-hover:bg-ocean-500 group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 group-hover:bg-sky-50 group-hover:text-ocean-600 transition-colors">
+                            26 سؤال
+                        </span>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-navy-900 mb-1">الأبجدية البحرية الدولية (A-Z)</h4>
+                        <p class="text-xs sm:text-sm text-slate-500">الكلمات الصوتية البحرية القياسية لجميع الأحرف من A إلى Z.</p>
+                    </div>
+                </div>
+
+                <!-- Branch 2: Vocabulary & Grammar -->
+                <div onclick="startQuiz('part2')" role="button" tabindex="0" class="group cursor-pointer bg-white rounded-2xl p-5 shadow-sm hover:shadow-xl border border-slate-200/80 transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="flex items-start justify-between gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                            32 سؤال
+                        </span>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-navy-900 mb-1">المفردات والقواعد البحرية (النماذج A, B, C)</h4>
+                        <p class="text-xs sm:text-sm text-slate-500">أسئلة الاختيار من متعدد المجمعة من النماذج الامتحانية الثلاثة.</p>
+                    </div>
+                </div>
+
+                <!-- Branch 3: SMCP Conversion -->
+                <div onclick="startQuiz('part3')" role="button" tabindex="0" class="group cursor-pointer bg-white rounded-2xl p-5 shadow-sm hover:shadow-xl border border-slate-200/80 transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="flex items-start justify-between gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors">
+                            6 أسئلة
+                        </span>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-navy-900 mb-1">تحويل الجمل إلى الإنكليزي البحري (SMCP)</h4>
+                        <p class="text-xs sm:text-sm text-slate-500">تحويل عبارات اللغة العامة إلى العبارات البحرية القياسية.</p>
+                    </div>
+                </div>
+
+                <!-- Branch 4: Message Markers -->
+                <div onclick="startQuiz('part4')" role="button" tabindex="0" class="group cursor-pointer bg-white rounded-2xl p-5 shadow-sm hover:shadow-xl border border-slate-200/80 transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="flex items-start justify-between gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 group-hover:bg-amber-50 group-hover:text-amber-600 transition-colors">
+                            8 أسئلة
+                        </span>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-navy-900 mb-1">محددات الرسائل البحرية (Message Markers)</h4>
+                        <p class="text-xs sm:text-sm text-slate-500">اختيار محدد الرسالة الصحيح للاتصالات اللاسلكية البحرية.</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ==================== SCREEN 2: QUIZ INTERFACE ==================== -->
+    <div id="quiz-screen" class="hidden min-h-screen flex flex-col bg-slate-100 fade-in">
+        
+        <!-- Top Sticky Status Bar (RTL: Right = Correct, Center = Remaining, Left = Wrong) -->
+        <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+            <div class="max-w-3xl mx-auto px-3 sm:px-5 py-3">
+                <div class="grid grid-cols-3 items-center gap-2">
+                    
+                    <!-- RIGHT SIDE (أقصى اليمين): Correct Answers -->
+                    <div class="flex items-center justify-start gap-1.5 sm:gap-2">
+                        <div class="flex items-center gap-1.5 bg-emerald-50 border border-emerald-200/80 text-emerald-700 px-2.5 sm:px-3.5 py-1.5 rounded-xl">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-xs sm:text-sm font-semibold hidden xs:inline">صحيحة:</span>
+                            <span id="correct-count" class="text-sm sm:text-base font-extrabold">0</span>
+                        </div>
+                    </div>
+
+                    <!-- CENTER (الوسط): Remaining Questions Counter -->
+                    <div class="flex flex-col items-center justify-center text-center">
+                        <span class="text-[11px] sm:text-xs font-semibold text-slate-400 leading-none mb-1">المتبقي</span>
+                        <div id="remaining-counter" class="text-sm sm:text-base font-extrabold text-navy-900 bg-slate-100 px-3 py-1 rounded-xl border border-slate-200/80 whitespace-nowrap">
+                            0 من 0
+                        </div>
+                    </div>
+
+                    <!-- LEFT SIDE (أقصى اليسار): Wrong Answers -->
+                    <div class="flex items-center justify-end gap-1.5 sm:gap-2">
+                        <div class="flex items-center gap-1.5 bg-rose-50 border border-rose-200/80 text-rose-700 px-2.5 sm:px-3.5 py-1.5 rounded-xl">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-rose-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-xs sm:text-sm font-semibold hidden xs:inline">خاطئة:</span>
+                            <span id="wrong-count" class="text-sm sm:text-base font-extrabold">0</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Slim Visual Progress Bar -->
+            <div class="w-full h-1.5 bg-slate-200 overflow-hidden">
+                <div id="progress-bar" class="h-full bg-gradient-to-l from-ocean-500 to-navy-800 transition-all duration-300 ease-out" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- Sub-header Controls -->
+        <div class="max-w-3xl w-full mx-auto px-4 sm:px-5 pt-4 pb-2 flex flex-wrap items-center justify-between gap-3">
+            <!-- Back to Home Button -->
+            <button onclick="goHome()" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white text-slate-700 hover:text-navy-900 hover:bg-slate-50 border border-slate-200 shadow-sm text-xs sm:text-sm font-bold transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span>الرئيسية</span>
+            </button>
+
+            <!-- Current Question Index Badge -->
+            <div id="question-index-badge" class="px-3.5 py-1.5 rounded-xl bg-navy-900/5 text-navy-900 font-bold text-xs sm:text-sm border border-navy-900/10">
+                السؤال 1 من 26
+            </div>
+
+            <!-- Auto-Advance Toggle Switch -->
+            <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-xs sm:text-sm font-bold text-slate-700">الانتقال التلقائي</span>
+                <button id="auto-advance-btn" type="button" onclick="toggleAutoAdvance()" role="switch" aria-checked="true" class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-ocean-500 transition-colors duration-200 focus:outline-none">
+                    <span id="auto-advance-dot" class="toggle-dot pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 -translate-x-5"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Main Card Area -->
+        <main class="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-5 py-3 flex flex-col justify-center">
+            <div id="question-card" class="bg-white rounded-3xl shadow-md border border-slate-200/80 p-5 sm:p-8 transition-all">
+                
+                <!-- Category Tag -->
+                <div class="flex items-center justify-between gap-2 mb-4">
+                    <span id="question-category-tag" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-50 text-ocean-600 border border-sky-200/70">
+                        الأبجدية البحرية الدولية (A-Z)
+                    </span>
+                    <span id="review-status-badge" class="hidden px-2.5 py-1 rounded-full text-xs font-bold"></span>
+                </div>
+
+                <!-- English Question Text (LTR) -->
+                <div class="mb-6 bg-slate-50/80 rounded-2xl p-4 sm:p-5 border border-slate-100">
+                    <h2 id="question-text" class="font-en text-lg sm:text-xl md:text-2xl font-bold text-navy-900 leading-relaxed">
+                        Question text loads here...
+                    </h2>
+                </div>
+
+                <!-- Answer Options Container (LTR) -->
+                <div id="options-container" class="space-y-3 font-en">
+                    <!-- Options injected dynamically -->
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Bottom Navigation Bar -->
+        <footer class="sticky bottom-0 z-20 bg-white/95 backdrop-blur-md border-t border-slate-200 py-3.5 px-4 sm:px-5 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
+            <div class="max-w-3xl mx-auto flex items-center justify-between gap-3">
+                
+                <!-- Previous Button (السابق) -->
+                <button id="prev-btn" onclick="prevQuestion()" type="button" class="flex-1 sm:flex-none sm:min-w-[140px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl font-bold text-sm sm:text-base border-2 border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300 disabled:opacity-40 disabled:cursor-not-allowed transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>السابق</span>
+                </button>
+
+                <!-- Next / Show Results Button (التالي / عرض النتيجة) -->
+                <button id="next-btn" onclick="nextQuestion()" type="button" class="flex-1 sm:flex-none sm:min-w-[160px] inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-bold text-sm sm:text-base bg-navy-900 text-white hover:bg-ocean-600 shadow-md transition-all">
+                    <span id="next-btn-text">التالي</span>
+                    <svg id="next-btn-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==================== RESULTS OVERLAY / MODAL ==================== -->
+    <div id="results-overlay" class="hidden fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 text-center fade-in my-auto">
+            
+            <!-- Circular Score Visual -->
+            <div class="relative inline-flex items-center justify-center w-32 h-32 mb-4">
+                <svg class="w-32 h-32 -rotate-90" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10"></circle>
+                    <circle id="score-circle-progress" cx="60" cy="60" r="52" fill="none" stroke="#0ea5e9" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.72" stroke-dashoffset="326.72" class="transition-all duration-700 ease-out"></circle>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                    <span id="result-percentage" class="text-3xl font-extrabold text-navy-900">0%</span>
+                    <span class="text-xs font-semibold text-slate-400">النتيجة</span>
+                </div>
+            </div>
+
+            <!-- Maritime Rank Message -->
+            <h2 id="result-rank-title" class="text-2xl font-extrabold text-navy-900 mb-1">قبطان ممتاز!</h2>
+            <p id="result-rank-subtitle" class="text-sm text-slate-500 mb-6">أداء رائع في اللغة الإنكليزية البحرية.</p>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-3.5">
+                    <div class="text-xs font-bold text-emerald-600 mb-1">الإجابات الصحيحة</div>
+                    <div id="result-correct" class="text-2xl font-extrabold text-emerald-700">0</div>
+                </div>
+                <div class="bg-rose-50 border border-rose-200/80 rounded-2xl p-3.5">
+                    <div class="text-xs font-bold text-rose-600 mb-1">الإجابات الخاطئة</div>
+                    <div id="result-wrong" class="text-2xl font-extrabold text-rose-700">0</div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-2.5">
+                <button onclick="reviewAnswers()" type="button" class="w-full py-3 px-4 rounded-2xl bg-navy-900 hover:bg-ocean-600 text-white font-bold text-sm sm:text-base transition-colors shadow-md">
+                    مراجعة الإجابات
+                </button>
+                <button id="retry-wrong-btn" onclick="retryWrongOnly()" type="button" class="hidden w-full py-3 px-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm sm:text-base transition-colors shadow-sm">
+                    إعادة الأسئلة الخاطئة فقط
+                </button>
+                <div class="grid grid-cols-2 gap-2.5 pt-1">
+                    <button onclick="restartCurrentQuiz()" type="button" class="py-2.5 px-4 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-colors">
+                        إعادة الاختبار
+                    </button>
+                    <button onclick="goHome()" type="button" class="py-2.5 px-4 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-colors">
+                        العودة للرئيسية
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIC & COMPLETE 72-QUESTION DATASET ==================== -->
+    <script>
+        // Complete verbatim dataset of all 72 Maritime English questions
+        const QUESTION_BANK = {
+            part1: {
+                title: "الأبجدية البحرية الدولية (A-Z)",
+                questions: [
+                    { q: "What is the maritime phonetic word for the letter A?", options: ["Alfa", "Echo", "Delta", "Lima"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter B?", options: ["Charlie", "Bravo", "Victor", "Papa"], correct: 1 },
+                    { q: "What is the maritime phonetic word for the letter C?", options: ["Golf", "Kilo", "Charlie", "Sierra"], correct: 2 },
+                    { q: "What is the maritime phonetic word for the letter D?", options: ["Delta", "Bravo", "Oscar", "Tango"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter E?", options: ["India", "Echo", "Alfa", "Uniform"], correct: 1 },
+                    { q: "What is the maritime phonetic word for the letter F?", options: ["Golf", "Hotel", "Foxtrot", "Whisky"], correct: 2 },
+                    { q: "What is the maritime phonetic word for the letter G?", options: ["Juliet", "Golf", "Quebec", "Romeo"], correct: 1 },
+                    { q: "What is the maritime phonetic word for the letter H?", options: ["Hotel", "India", "Mike", "Zulu"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter I?", options: ["Echo", "Lima", "India", "Yankee"], correct: 2 },
+                    { q: "What is the maritime phonetic word for the letter J?", options: ["Kilo", "Juliet", "Golf", "X-ray"], correct: 1 },
+                    { q: "What is the maritime phonetic word for the letter K?", options: ["Kilo", "Charlie", "Quebec", "Victor"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter L?", options: ["Mike", "November", "Lima", "Oscar"], correct: 2 },
+                    { q: "What is the maritime phonetic word for the letter M?", options: ["November", "Mike", "Papa", "Romeo"], correct: 1 },
+                    { q: "What is the maritime phonetic word for the letter N?", options: ["November", "Mike", "Uniform", "Sierra"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter O?", options: ["Papa", "Alfa", "Oscar", "Tango"], correct: 2 },
+                    { q: "What is the maritime phonetic word for the letter P?", options: ["Bravo", "Papa", "Quebec", "Romeo"], correct: 1 },
+                    { q: "What is the maritime phonetic word for the letter Q?", options: ["Quebec", "Kilo", "Uniform", "Whisky"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter R?", options: ["Sierra", "Tango", "Romeo", "Victor"], correct: 2 },
+                    { q: "What is the maritime phonetic word for the letter S?", options: ["Sierra", "Zulu", "Charlie", "X-ray"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter T?", options: ["Delta", "Tango", "Foxtrot", "Hotel"], correct: 1 },
+                    { q: "What is the maritime phonetic word for the letter U?", options: ["Victor", "Oscar", "Uniform", "Yankee"], correct: 2 },
+                    { q: "What is the maritime phonetic word for the letter V?", options: ["Victor", "Whisky", "Bravo", "Foxtrot"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter W?", options: ["Yankee", "Whisky", "Victor", "X-ray"], correct: 1 },
+                    { q: "What is the maritime phonetic word for the letter X?", options: ["Zulu", "Yankee", "X-ray", "Quebec"], correct: 2 },
+                    { q: "What is the maritime phonetic word for the letter Y?", options: ["Yankee", "Juliet", "India", "Uniform"], correct: 0 },
+                    { q: "What is the maritime phonetic word for the letter Z?", options: ["Sierra", "X-ray", "Zulu", "Tango"], correct: 2 }
+                ]
+            },
+            part2: {
+                title: "المفردات والقواعد البحرية (النماذج A, B, C)",
+                questions: [
+                    { q: "The person who steers a ship is _____.", options: ["motor man", "helm", "helmsman"], correct: 2 },
+                    { q: "The wheel for steering the ship is _____.", options: ["helm", "helmet", "helmsman"], correct: 0 },
+                    { q: "The ship which is not attached to the wharf or an anchor is _____.", options: ["underway", "capsized", "derelict"], correct: 0 },
+                    { q: "A vessel turned over is _____.", options: ["adrift", "capsized", "underway"], correct: 1 },
+                    { q: "_____ is a vessel which is so damaged as to be unseaworthy.", options: ["Adrift", "Wreck", "Capsized"], correct: 1 },
+                    { q: "A vessel restricted by her ability to maneuver by the nature of her work is _____.", options: ["hampered", "NUC", "adrift"], correct: 0 },
+                    { q: "A vessel damaged in such a manner as to be incapable of proceeding is _____.", options: ["derelict", "moored", "disabled"], correct: 2 },
+                    { q: "IMO: International _____ Organization.", options: ["Maritime", "Marine", "Mariner"], correct: 0 },
+                    { q: "SMCP: Standard Marine _____ Phrases.", options: ["Communication", "Communicated", "Cooperation"], correct: 0 },
+                    { q: "_____ is using water as ballast for keeping the ship stable.", options: ["Cleaning", "Trim", "Ballasting"], correct: 2 },
+                    { q: "To balance a ship by shifting its cargo is _____.", options: ["listing", "drifting", "trimming"], correct: 2 },
+                    { q: "When a piece of equipment is not functioning we say it is _____.", options: ["operate", "inoperative", "operative"], correct: 1 },
+                    { q: "The _____ gases produced by chemicals, fires, fuel, are called fumes.", options: ["harm", "harming", "harmful"], correct: 2 },
+                    { q: "_____ is your present speed?", options: ["What", "Who", "When"], correct: 0 },
+                    { q: "You must _____ the bridge.", options: ["informing", "informs", "inform"], correct: 2 },
+                    { q: "I _____ pumping rate now.", options: ["am decreasing", "decrease", "decreased"], correct: 0 },
+                    { q: "He is the watch officer, _____?", options: ["is he", "does he", "isn't he"], correct: 2 },
+                    { q: "The officers were ready for sailing, _____?", options: ["weren't they", "were they", "did they"], correct: 0 },
+                    { q: "_____ do they inspect the ship?", options: ["How often", "How far", "How many"], correct: 0 },
+                    { q: "They _____ the new tanker last week.", options: ["launch", "launching", "launched"], correct: 2 },
+                    { q: "They _____ from position yet.", options: ["have drifted", "haven't drifted", "hasn't drifted"], correct: 1 },
+                    { q: "Discharging is _____.", options: ["loading", "unloading", "exchanging"], correct: 1 },
+                    { q: "The opposite of horizontal is _____.", options: ["vertical", "linear", "tropical"], correct: 0 },
+                    { q: "Becoming greater or larger is _____.", options: ["decrease", "reduce", "increase"], correct: 2 },
+                    { q: "Securing a vessel by cables, wires or ropes to a dock is _____.", options: ["trimming", "listing", "moored"], correct: 2 },
+                    { q: "Constructed so tightly as not to leak any water is _____.", options: ["watering", "watertight", "waterproof"], correct: 1 },
+                    { q: "North, east, south and west are called _____ points of the compass.", options: ["basic", "principal", "cardinal"], correct: 2 },
+                    { q: "To pull a vessel off after grounding is to _____.", options: ["refloat", "drift", "proceed"], correct: 0 },
+                    { q: "The course of the ship must be _____.", options: ["change", "changes", "changed"], correct: 2 },
+                    { q: "If I _____ the chart, I will arrive.", options: ["follow", "will follow", "following"], correct: 0 },
+                    { q: "My first days on board are for _____.", options: ["familiar", "familiarization", "playing"], correct: 1 },
+                    { q: "When the _____ of the radio station have broken down, switched off or suspended, it is off air.", options: ["transit", "transition (transmissions)", "transmitted"], correct: 1 }
+                ]
+            },
+            part3: {
+                title: "تحويل الجمل إلى الإنكليزي البحري (SMCP)",
+                questions: [
+                    { q: 'General English: "Tanker ship Trader (T-R-A-D-E-R)."', options: ["M/V Trader: Tango Romeo Alpha Delta Echo Romeo", "M/T Trader: Tango Romeo Alpha Delta Echo Romeo", "M/T Trader: Tango Romeo Alfa Delta Echo Sierra"], correct: 1 },
+                    { q: 'General English: "May I enter the fairway?"', options: ["Do I have permission to enter the fairway?", "I am entering the fairway immediately.", "Keep clear of the fairway."], correct: 0 },
+                    { q: 'General English: "I am leaning to the port side."', options: ["I am altering course to port.", "I have a list to the port side.", "I am drifting to the port side."], correct: 1 },
+                    { q: 'General English: "I need a doctor\'s help."', options: ["Warning: I have a doctor on board.", "Information: Medical advice is not needed.", "Request: I require medical assistance."], correct: 2 },
+                    { q: 'General English: "We will arrive at 3 p.m."', options: ["My ETD is 1500 UTC.", "My ETA is 1500 UTC.", "My ETA is 0300 UTC."], correct: 1 },
+                    { q: 'General English: "We will arrive at 10 p.m."', options: ["My ETA is 1000 UTC.", "My ETA is 2200 UTC.", "My ETD is 2200 UTC."], correct: 1 }
+                ]
+            },
+            part4: {
+                title: "محددات الرسائل البحرية (Message Markers)",
+                questions: [
+                    { q: '"_____: What is your course?"', options: ["Warning", "Question", "Answer", "Advice"], correct: 1 },
+                    { q: '"_____: Stop engine immediately."', options: ["Instruction", "Question", "Answer", "Information"], correct: 0 },
+                    { q: '"_____: I will reduce speed."', options: ["Warning", "Request", "Intention", "Question"], correct: 2 },
+                    { q: '"_____: The leading lights are unlit."', options: ["Warning / Information", "Question", "Intention", "Request"], correct: 0 },
+                    { q: '"_____: My course is 1-3-2 degrees true."', options: ["Advice", "Warning", "Answer", "Instruction"], correct: 2 },
+                    { q: '"_____: Obstruction in the fairway."', options: ["Warning", "Answer", "Question", "Intention"], correct: 0 },
+                    { q: '"_____: Steer course 135 degrees true."', options: ["Question", "Instruction", "Answer", "Warning"], correct: 1 },
+                    { q: '"_____: The visibility is very poor."', options: ["Request", "Answer", "Warning", "Advice"], correct: 2 }
+                ]
+            }
+        };
+
+        // Application State
+        let state = {
+            currentMode: 'all',          // 'all', 'part1', 'part2', 'part3', 'part4', or 'wrongOnly'
+            questions: [],               // Array of active question objects with category
+            userAnswers: [],             // Array of selected option indices (null if unanswered)
+            currentIndex: 0,
+            correctCount: 0,
+            wrongCount: 0,
+            shuffleEnabled: false,
+            autoAdvance: true,           // ON by default
+            autoAdvanceTimer: null
+        };
+
+        const OPTION_LETTERS = ['a', 'b', 'c', 'd'];
+
+        // ==================== UTILITY FUNCTIONS ====================
+        function clearAutoAdvanceTimer() {
+            if (state.autoAdvanceTimer) {
+                clearTimeout(state.autoAdvanceTimer);
+                state.autoAdvanceTimer = null;
+            }
+        }
+
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // ==================== HOME SCREEN CONTROLS ====================
+        function toggleShuffle() {
+            state.shuffleEnabled = !state.shuffleEnabled;
+            const btn = document.getElementById('shuffle-toggle-btn');
+            const dot = document.getElementById('shuffle-toggle-dot');
+            btn.setAttribute('aria-checked', state.shuffleEnabled);
+            if (state.shuffleEnabled) {
+                btn.classList.remove('bg-slate-300');
+                btn.classList.add('bg-ocean-500');
+                dot.classList.remove('translate-x-0');
+                dot.classList.add('-translate-x-5');
+            } else {
+                btn.classList.remove('bg-ocean-500');
+                btn.classList.add('bg-slate-300');
+                dot.classList.remove('-translate-x-5');
+                dot.classList.add('translate-x-0');
+            }
+        }
+
+        function toggleAutoAdvance() {
+            clearAutoAdvanceTimer();
+            state.autoAdvance = !state.autoAdvance;
+            const btn = document.getElementById('auto-advance-btn');
+            const dot = document.getElementById('auto-advance-dot');
+            btn.setAttribute('aria-checked', state.autoAdvance);
+            if (state.autoAdvance) {
+                btn.classList.remove('bg-slate-300');
+                btn.classList.add('bg-ocean-500');
+                dot.classList.remove('translate-x-0');
+                dot.classList.add('-translate-x-5');
+            } else {
+                btn.classList.remove('bg-ocean-500');
+                btn.classList.add('bg-slate-300');
+                dot.classList.remove('-translate-x-5');
+                dot.classList.add('translate-x-0');
+            }
+        }
+
+        // ==================== QUIZ INITIALIZATION ====================
+        function buildQuestionList(mode) {
+            let list = [];
+            if (mode === 'all') {
+                ['part1', 'part2', 'part3', 'part4'].forEach(key => {
+                    const section = QUESTION_BANK[key];
+                    section.questions.forEach(item => {
+                        list.push({ ...item, category: section.title });
+                    });
+                });
+            } else if (QUESTION_BANK[mode]) {
+                const section = QUESTION_BANK[mode];
+                list = section.questions.map(item => ({ ...item, category: section.title }));
+            }
+            return state.shuffleEnabled ? shuffleArray(list) : list;
+        }
+
+        function startQuiz(mode, customQuestions = null) {
+            clearAutoAdvanceTimer();
+            state.currentMode = mode;
+            state.questions = customQuestions ? customQuestions : buildQuestionList(mode);
+            state.userAnswers = new Array(state.questions.length).fill(null);
+            state.currentIndex = 0;
+            state.correctCount = 0;
+            state.wrongCount = 0;
+
+            // Switch screens
+            document.getElementById('results-overlay').classList.add('hidden');
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+
+            updateStatusBar();
+            renderQuestion();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goHome() {
+            clearAutoAdvanceTimer();
+            document.getElementById('results-overlay').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('home-screen').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==================== STATUS BAR & RENDERING ====================
+        function updateStatusBar() {
+            const total = state.questions.length;
+            const answered = state.correctCount + state.wrongCount;
+            const remaining = total - answered;
+            const progressPct = total > 0 ? Math.round((answered / total) * 100) : 0;
+
+            document.getElementById('correct-count').textContent = state.correctCount;
+            document.getElementById('wrong-count').textContent = state.wrongCount;
+            document.getElementById('remaining-counter').textContent = `${remaining} من ${total}`;
+            document.getElementById('progress-bar').style.width = `${progressPct}%`;
+        }
+
+        function renderQuestion() {
+            const qObj = state.questions[state.currentIndex];
+            const total = state.questions.length;
+            const userAnswer = state.userAnswers[state.currentIndex];
+            const isAnswered = userAnswer !== null;
+
+            // Update badges & text
+            document.getElementById('question-index-badge').textContent = `السؤال ${state.currentIndex + 1} من ${total}`;
+            document.getElementById('question-category-tag').textContent = qObj.category;
+            document.getElementById('question-text').textContent = qObj.q;
+
+            // Review status badge if already answered
+            const reviewBadge = document.getElementById('review-status-badge');
+            if (isAnswered) {
+                reviewBadge.classList.remove('hidden');
+                if (userAnswer === qObj.correct) {
+                    reviewBadge.textContent = 'إجابة صحيحة';
+                    reviewBadge.className = 'px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700';
+                } else {
+                    reviewBadge.textContent = 'إجابة خاطئة';
+                    reviewBadge.className = 'px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-700';
+                }
+            } else {
+                reviewBadge.classList.add('hidden');
+            }
+
+            // Render options
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            qObj.options.forEach((optText, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.disabled = isAnswered;
+
+                // Determine styling based on answer state
+                let baseClasses = 'w-full flex items-center justify-between gap-3 p-4 rounded-2xl border-2 text-left transition-all duration-200 ';
+                let letterBadgeClasses = 'w-8 h-8 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 ';
+                let statusIcon = '';
+
+                if (!isAnswered) {
+                    baseClasses += 'bg-white border-slate-200 hover:border-ocean-500 hover:bg-sky-50/50 text-slate-800 cursor-pointer active:scale-[0.99]';
+                    letterBadgeClasses += 'bg-slate-100 text-slate-600';
+                } else {
+                    if (idx === qObj.correct) {
+                        baseClasses += 'bg-emerald-50 border-emerald-500 text-emerald-900 font-semibold';
+                        letterBadgeClasses += 'bg-emerald-500 text-white';
+                        statusIcon = `<svg class="w-6 h-6 text-emerald-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>`;
+                    } else if (idx === userAnswer) {
+                        baseClasses += 'bg-rose-50 border-rose-500 text-rose-900 font-semibold';
+                        letterBadgeClasses += 'bg-rose-500 text-white';
+                        statusIcon = `<svg class="w-6 h-6 text-rose-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+                    } else {
+                        baseClasses += 'bg-slate-50/60 border-slate-200/70 text-slate-400 opacity-75';
+                        letterBadgeClasses += 'bg-slate-200/70 text-slate-400';
+                    }
+                }
+
+                btn.className = baseClasses;
+                btn.innerHTML = `
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <span class="${letterBadgeClasses}">${OPTION_LETTERS[idx]}</span>
+                        <span class="text-sm sm:text-base leading-snug break-words">${optText}</span>
+                    </div>
+                    ${statusIcon}
+                `;
+
+                if (!isAnswered) {
+                    btn.onclick = () => selectAnswer(idx);
+                }
+                container.appendChild(btn);
+            });
+
+            // Update Navigation Buttons
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtnText = document.getElementById('next-btn-text');
+            const nextBtnIcon = document.getElementById('next-btn-icon');
+
+            prevBtn.disabled = state.currentIndex === 0;
+
+            const isLast = state.currentIndex === total - 1;
+            const allAnswered = (state.correctCount + state.wrongCount) === total;
+
+            if (isLast) {
+                nextBtnText.textContent = 'عرض النتيجة';
+                nextBtnIcon.classList.add('hidden');
+            } else {
+                nextBtnText.textContent = 'التالي';
+                nextBtnIcon.classList.remove('hidden');
+            }
+        }
+
+        // ==================== ANSWER HANDLING & NAVIGATION ====================
+        function selectAnswer(selectedIndex) {
+            // Prevent double-answering or changing locked answers
+            if (state.userAnswers[state.currentIndex] !== null) return;
+
+            const qObj = state.questions[state.currentIndex];
+            state.userAnswers[state.currentIndex] = selectedIndex;
+
+            if (selectedIndex === qObj.correct) {
+                state.correctCount++;
+            } else {
+                state.wrongCount++;
+            }
+
+            updateStatusBar();
+            renderQuestion();
+
+            // Handle Auto-Advance if enabled
+            if (state.autoAdvance) {
+                clearAutoAdvanceTimer();
+                state.autoAdvanceTimer = setTimeout(() => {
+                    if (state.currentIndex < state.questions.length - 1) {
+                        state.currentIndex++;
+                        renderQuestion();
+                    } else {
+                        showResults();
+                    }
+                }, 900);
+            }
+        }
+
+        function prevQuestion() {
+            clearAutoAdvanceTimer();
+            if (state.currentIndex > 0) {
+                state.currentIndex--;
+                renderQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            clearAutoAdvanceTimer();
+            if (state.currentIndex < state.questions.length - 1) {
+                state.currentIndex++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        // ==================== RESULTS SCREEN ====================
+        function showResults() {
+            clearAutoAdvanceTimer();
+            const total = state.questions.length;
+            const percentage = total > 0 ? Math.round((state.correctCount / total) * 100) : 0;
+
+            document.getElementById('result-percentage').textContent = `${percentage}%`;
+            document.getElementById('result-correct').textContent = state.correctCount;
+            document.getElementById('result-wrong').textContent = state.wrongCount;
+
+            // Animate circular progress
+            const circle = document.getElementById('score-circle-progress');
+            const circumference = 326.72;
+            const offset = circumference - (percentage / 100) * circumference;
+            circle.style.strokeDashoffset = circumference;
+            
+            // Color & Maritime Rank Message
+            const titleEl = document.getElementById('result-rank-title');
+            const subEl = document.getElementById('result-rank-subtitle');
+
+            if (percentage >= 90) {
+                circle.style.stroke = '#10b981';
+                titleEl.textContent = 'ربان متميز (Master Mariner)!';
+                subEl.textContent = 'أداء استثنائي وإتقان تام للمصطلحات والقواعد البحرية.';
+            } else if (percentage >= 75) {
+                circle.style.stroke = '#0ea5e9';
+                titleEl.textContent = 'ضابط ملاحة أول (Chief Officer)!';
+                subEl.textContent = 'نتيجة ممتازة جداً، استمر في هذا التقدم الرائع.';
+            } else if (percentage >= 60) {
+                circle.style.stroke = '#f59e0b';
+                titleEl.textContent = 'ضابط نوبة (Watch Officer)';
+                subEl.textContent = 'أداء جيد، يمكنك مراجعة الأخطاء لرفع نتيجتك أكثر.';
+            } else {
+                circle.style.stroke = '#f43f5e';
+                titleEl.textContent = 'بحاجة لمزيد من التدريب';
+                subEl.textContent = 'راجع الأسئلة الخاطئة وحاول مجدداً لتثبيت المعلومات.';
+            }
+
+            // Show/hide "Retry Wrong Only" button
+            const retryWrongBtn = document.getElementById('retry-wrong-btn');
+            if (state.wrongCount > 0) {
+                retryWrongBtn.classList.remove('hidden');
+            } else {
+                retryWrongBtn.classList.add('hidden');
+            }
+
+            document.getElementById('results-overlay').classList.remove('hidden');
+
+            // Trigger circle animation smoothly
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    circle.style.strokeDashoffset = offset;
+                }, 50);
+            });
+        }
+
+        function reviewAnswers() {
+            document.getElementById('results-overlay').classList.add('hidden');
+            state.currentIndex = 0;
+            renderQuestion();
+        }
+
+        function retryWrongOnly() {
+            const wrongQuestions = state.questions.filter((q, idx) => {
+                return state.userAnswers[idx] !== null && state.userAnswers[idx] !== q.correct;
+            });
+            if (wrongQuestions.length > 0) {
+                startQuiz('wrongOnly', wrongQuestions);
+            }
+        }
+
+        function restartCurrentQuiz() {
+            if (state.currentMode === 'wrongOnly') {
+                startQuiz('wrongOnly', [...state.questions]);
+            } else {
+                startQuiz(state.currentMode);
+            }
+        }
+    </script>
+</body>
+</html>
